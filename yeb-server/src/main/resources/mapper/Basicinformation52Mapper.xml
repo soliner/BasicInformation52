@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.server.mapper.BasicInformation52Mapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.server.entity.Basicinformation52">
+        <result column="id" property="id" />
+        <result column="industry" property="industry" />
+        <result column="name" property="name" />
+        <result column="address" property="address" />
+        <result column="manager" property="manager" />
+        <result column="newtime" property="newtime" />
+        <result column="customseg" property="customseg" />
+        <result column="number" property="number" />
+        <result column="computernum" property="computernum" />
+        <result column="computertime" property="computertime" />
+        <result column="videonum" property="videonum" />
+        <result column="videofee" property="videofee" />
+        <result column="wifi" property="wifi" />
+        <result column="networkfee" property="networkfee" />
+        <result column="industrywifinum" property="industrywifinum" />
+        <result column="corework" property="corework" />
+        <result column="corepart" property="corepart" />
+        <result column="workhabite" property="workhabite" />
+        <result column="decider" property="decider" />
+        <result column="coreperson" property="coreperson" />
+        <result column="solidworkhave" property="solidworkhave" />
+        <result column="solidworknum" property="solidworknum" />
+        <result column="solidworkannual" property="solidworkannual" />
+        <result column="solidworktime" property="solidworktime" />
+        <result column="mobilehave" property="mobilehave" />
+        <result column="shortnumhave" property="shortnumhave" />
+        <result column="mobileworknum" property="mobileworknum" />
+        <result column="monthfee" property="monthfee" />
+        <result column="annualfee" property="annualfee" />
+        <result column="endtime" property="endtime" />
+        <result column="professionnum" property="professionnum" />
+        <result column="professionbelong" property="professionbelong" />
+        <result column="professionfee" property="professionfee" />
+        <result column="professionstime" property="professionstime" />
+        <result column="mobilebelong" property="mobilebelong" />
+        <result column="mobilenum" property="mobilenum" />
+        <result column="mobileworkpart" property="mobileworkpart" />
+        <result column="realmonthfee" property="realmonthfee" />
+        <result column="isUpYes" property="isUpYes" />
+        <result column="endtimemobile" property="endtimemobile" />
+        <result column="isShortNum" property="isShortNum" />
+        <result column="square" property="square" />
+        <result column="ibm" property="ibm" />
+        <result column="unum" property="unum" />
+        <result column="use1" property="use1" />
+        <result column="isProfessionprotect" property="isProfessionprotect" />
+        <result column="protectfee" property="protectfee" />
+        <result column="isUPS" property="isUPS" />
+        <result column="isMustGrade" property="isMustGrade" />
+        <result column="isPassGrade" property="isPassGrade" />
+        <result column="isCollecation" property="isCollecation" />
+        <result column="platformNum" property="platformNum" />
+        <result column="platformName" property="platformName" />
+        <result column="platformProtectfee" property="platformProtectfee" />
+        <result column="isCloud" property="isCloud" />
+        <result column="isWeb" property="isWeb" />
+        <result column="isApp" property="isApp" />
+        <result column="severNum" property="severNum" />
+        <result column="fee" property="fee" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, industry, name, address, manager, newtime, customseg, number, computernum, computertime, videonum, videofee, wifi, networkfee, industrywifinum, corework, corepart, workhabite, decider, coreperson, solidworkhave, solidworknum, solidworkannual, solidworktime, mobilehave, shortnumhave, mobileworknum, monthfee, annualfee, endtime, professionnum, professionbelong, professionfee, professionstime, mobilebelong, mobilenum, mobileworkpart, realmonthfee, isUpYes, endtimemobile, isShortNum, square, ibm, unum, use1, isProfessionprotect, protectfee, isUPS, isMustGrade, isPassGrade, isCollecation, platformNum, platformName, platformProtectfee, isCloud, isWeb, isApp, severNum, fee
+    </sql>
+
+    <resultMap id="BasicInformation52Info" type="com.example.server.entity.Basicinformation52" extends="BaseResultMap">
+    </resultMap>
+    <select id="getBasicInformation52sByPage" resultMap="BasicInformation52Info">
+    SELECT
+    *
+    FROM
+    basicinformation52 e
+    WHERE
+    1=1
+        <if test="null!=basicinformation52.name and ''!=basicinformation52.name">
+            AND e.`name` LIKE CONCAT('%', #{basicinformation52.name}, '%')
+        </if>
+        <if test="null!=basicinformation52.industry and ''!=basicinformation52.industry">
+            AND e.`industry` LIKE CONCAT('%', #{basicinformation52.industry}, '%')
+        </if>
+        <if test="null!=basicinformation52.manager and ''!=basicinformation52.manager">
+            AND e.`manager` LIKE CONCAT('%', #{basicinformation52.manager}, '%')
+        </if>
+    </select>
+    <select id="getBasicInformation52" resultMap="BasicInformation52Info">
+        SELECT
+        *
+        FROM
+        basicinformation52
+        <if test="null!=id">
+            id=#{id}
+        </if>
+    </select>
+
+</mapper>
